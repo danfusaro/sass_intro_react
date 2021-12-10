@@ -1,0 +1,24 @@
+@use "sass:math"; // Use sass Math module for advanced calc
+
+// Can be used as a mixin gallery used where needed
+
+$move-transition-speed: math.div(
+  100ms,
+  50px
+); // Figures out speed of going 50px in 100ms
+
+@mixin move($left-start, $left-stop) {
+  position: relative;
+  left: $left-start;
+  transition: left ($left-stop - $left-start) * $move-transition-speed;
+
+  &:hover {
+    left: $left-stop;
+  }
+}
+
+// Mixin with a default value
+@mixin border-radius($radius: 10px) {
+  border-radius: $radius;
+  padding: $radius;
+}

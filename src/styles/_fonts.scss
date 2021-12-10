@@ -1,0 +1,26 @@
+$body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+// TODO show directives
+// @if
+// @for
+// @while
+// @each
+
+// Use directives and interpolation syntax to iterate and do fun stuff like this!
+// https://sass-lang.com/documentation/interpolation
+$font-sizes: (
+  tiny: 8px,
+  small: 11px,
+  medium: 13px,
+  large: 48px,
+);
+@each $name, $size in $font-sizes {
+  %#{$name} {
+    font-size: $size;
+  }
+}
+
+// Output:
+// %tiny: { font-size: 8px }   etc

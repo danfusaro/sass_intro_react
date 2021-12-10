@@ -1,0 +1,14 @@
+// Styling applied by default to the entire application
+@use "fonts" as *; // Imported vars must always be namespaced
+
+body {
+  margin: 0;
+  font-family: $body;
+  @extend %large;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: $code;
+}

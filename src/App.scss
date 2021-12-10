@@ -1,0 +1,46 @@
+@use "sass:color";
+@use "./styles" as *; // Use all modules exposed at ./styles/index.scss
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  // Concatenate class name (BEM)
+  &__text {
+    background: $colors-banner-bg;
+    color: $colors-banner-fg;
+    // Uses imported module function from mixins
+    @include mixins-border-radius();
+    @include mixins-move(10px, 120px);
+    &:hover {
+      // Sass color function
+      background: darken($colors-banner-bg, 20%);
+    }
+  }
+}
+
+.App-logo {
+  @extend %spin; // Imported animation from partials
+}
+
+.App-header {
+  @extend %flex-column;
+  background-color: #fff;
+  min-height: 100vh;
+  // Nested properties
+  font: {
+    size: calc(10px + 2vmin);
+    weight: bold;
+  }
+  color: $colors-header; // Using imported module color var from colors
+}
+
+.App-link {
+  color: #61dafb;
+  &:hover {
+    color: darken(#61dafb, 20%); // Sass Color Function
+  }
+}
